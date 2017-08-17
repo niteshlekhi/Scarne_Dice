@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnHold;
     @InjectView(R.id.buttonReset)
     Button btnReset;
+    @InjectView(R.id.imageDice)
+    ImageView imgDice;
     Random random=new Random();
 
     @Override
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int num = getRandomValue();
-                Toast.makeText(MainActivity.this, "Number: "+num, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Number: "+num, Toast.LENGTH_SHORT).show();
               //  if (num != 1) {
 
                // }
@@ -64,25 +67,25 @@ public class MainActivity extends AppCompatActivity {
 
     //Method to get Random Dice value
     public int getRandomValue() {
-        int num = random.nextInt();
+        int num = random.nextInt(6)+1;
         switch (num) {
             case 1:
-                getResources().getDrawable(R.drawable.dice1);
+                imgDice.setImageResource(R.drawable.dice1);
                 break;
             case 2:
-                getResources().getDrawable(R.drawable.dice2);
+                imgDice.setImageResource(R.drawable.dice2);
                 break;
             case 3:
-                getResources().getDrawable(R.drawable.dice3);
+                imgDice.setImageResource(R.drawable.dice3);
                 break;
             case 4:
-                getResources().getDrawable(R.drawable.dice4);
+                imgDice.setImageResource(R.drawable.dice4);
                 break;
             case 5:
-                getResources().getDrawable(R.drawable.dice5);
+                imgDice.setImageResource(R.drawable.dice5);
                 break;
             case 6:
-                getResources().getDrawable(R.drawable.dice6);
+                imgDice.setImageResource(R.drawable.dice6);
                 break;
         }
         return num;
