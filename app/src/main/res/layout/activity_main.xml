@@ -38,13 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:src="@drawable/dice1"/>
+        android:src="@drawable/dice"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp">
 
         <Button
             android:id="@+id/buttonRoll"
@@ -74,5 +75,12 @@
             android:layout_margin="10dp"/>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"/>
 
 </LinearLayout>
